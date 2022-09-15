@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800;900&display=swap');
+
+:root {
+    --primary: #ff0000;
+    --news_elements_color: rgb(53, 53, 53);
+}
+
+/* Give everything a poppins font family and a smooth scroll behavior and a 0.5s transition */
+* {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.5s;
+}
+
+/* Give the html and body tags no padding, no margin, full width and full height */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* When the cursor hovers over any link make it a pointer */
+a {
+    cursor: pointer;
+}
+
+/* Give the home card div a 40px margin and padding, 375px height, 83px border radius, shadow, display flex and make its items align in a row, hidden overflow, 1s transition  */
+.home-card {
+    margin: 40px;
+    height: 375px;
+    border-radius: 83px;
+    box-shadow: 0 0 31px 0 #b6b6b640;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    overflow: hidden;
+    transition: 1s;
+}
+
+/* When the home card div is hovered make it's shadow stronger */
+.home-card:hover {
+    box-shadow: 0 0 45px 7px #b6b6b673;
+
+}
+
+/* Give the image div that has a home card div parent a 38% width, 60px border radius and a 34px margin right */
+.home-card .image {
+    /* TODO: this color is here until the div gets an image */
+    background: var(--primary);
+    width: 38%;
+    border-radius: 60px;
+    margin-right: 34px;
+}
+
+/* Give the text div that has a home card div parent a 49% width and a hidden overflow */
+.home-card .text {
+    width: 49%;
+    overflow: hidden;
+}
+
+/* Give the p tag that has a text div parent and a home card div grand parent a grey color and a 12px font size */
+.home-card .text p {
+    color: #A5A5A5;
+    font-size: 12px;
+}
+
+/* Give the iframe a width of -webkit-fill-available and a 40px margin */
+iframe {
+    width: -webkit-fill-available;
+    margin: 40px;
+}
+
+/* Give the news div a grey bg color, full width and height, centered children, hidden overflow */
+.news {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Give the carousel div full width */
+.carousel {
+    width: 100%;
+}
+
+/* Position the carousal indicators div in the the top left corner  */
+.carousel-indicators {
+    top: 0;
+    margin-top: 16px;
+    margin-left: 7.5%;
+    justify-content: flex-start;
+}
+/* Give the indicators a 6px width and height and a 6px border-radius and no border and a horizontal margin of 8px  */
+.carousel-indicators [data-bs-target] {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    border: 0;
+    margin: 0 8px;
+    background-color: rgb(68, 68, 68);
+}
+
+/* Give the active indicators a 0.5s transition, 30px width, 6px border radius and a grey bg */
+.carousel-indicators .active {
+    transition: 0.5s;
+    width: 30px;
+    border-radius: 6px;
+    background-color: var(--news_elements_color);
+
+}
+.carousel-control-next-icon, .carousel-control-prev-icon
+{
+    z-index: 1;
+}
+.carousel-control-prev::before, .carousel-control-next::before
+{
+    content: '';
+    position: absolute;
+    background-color: var(--news_elements_color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    z-index: 0;
+    cursor: pointer;
+}
+/* Give the mouse div a 18px margin, 2 z-index, 42px border radius,20px width, 35px height, 3px grey border and position it at the bottom and center its children and if the cursor hovers over it make the cursor a pointer   */
+.mouse {
+    width: 20px;
+    height: 35px;
+    border: 3px solid var(--news_elements_color);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin: 18px;
+    border-radius: 42px;
+    cursor: pointer;
+    z-index: 2;
+}
+/* Give the wheel div a 5px width, 9px height, 5px margin, grey bg, 20px border radius, mouse_wheel animation */
+.wheel {
+    width: 5px;
+    height: 9px;
+    margin: 5px;
+    background: var(--news_elements_color);
+    border-radius: 20px;
+    animation-name: mouse_wheel;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Give the theme div a 40px margin and center its children */
+.theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Give the text div that has a theme div parent a center vertically and align them according to the space betwwen them horizontally */
+.theme .text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Give h1 that has a text div parent and a theme div grandparent a primary font color and removing its margin */
+.theme .text h1 {
+    color: var(--primary);
+    margin: 0;
+}
+
+/* Give the sub-timer div full width and align its text and give it a primary font color and a 900 font weight*/
+.sub-timer
+{
+     width : 100%;
+     text-align : center;
+     color : var(--primary);
+     font-weight : 900;
+}
+
+/* Give the h3 tags that has a text div parent and a theme div grand parent no margin */
+.theme .text h3 {
+    margin: 0;
+}
+/* Give the line div a 13% vertical margin a 1px height and a grey bg */
+.line {
+    margin: 0 13%;
+    background-color: #A5A5A5;
+    height: 1px;
+}
+
+/* Make the timer's children centered amd give it a primary font color and a bold font weight and 72px font size and align the text at center */
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 72px;
+    text-align: center;
+}
+
+/* Center the add to calendar div children and give then a 12px font size and a grey font color */
+.add_to_calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #A5A5A5;
+}
+
+/* Give the button div that has an add_to_calendar div parent a 289px width, 37px height, 5px padding, 5px top margin, align its children vertically at center and horizontally space-evenly and make when the cursor hovers over it make the cursor a pointer */
+.add_to_calendar .button {
+    width: 289px;
+    height: 37px;
+    padding: 5px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+/* if the add calendar button is hovered change its font color to the primary color */
+.add_to_calendar .button:hover {
+    color: var(--primary);
+}
+
+/* Make the nav bar fixed at the top right of the page with a white bg and a 3 zindex and a box shadow and bottom border radius and 80px height */
+.nav {
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 3;
+    box-shadow: 0 0 45px 7px #b6b6b673;
+    border-radius: 0 0 30px 30px;
+    height: 80px;
+    right: 0;
+}
+
+/* Align the nav links div children at center vertically and according to the space around its elements horizontally*/
+.nav-links-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+/* Give the calendar icon 19px font size */
+.fa-calendar {
+    font-size: 19px;
+}
+
+/* Give the nav bar ul no padding, 18px horizontal margin, full width, and center its elements vertically and align them according to the space between them horizontally  */
+.ul-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0 18px;
+    width: 100%;
+}
+
+/* Give each nav bar link no text decoration, black font color, full width, center its elements, 12px font size, remove vertical padding */
+.nav-link {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 12px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+/* set each i tag that has a nav-link parent, display to block and 20px font size  */
+.nav-link i {
+    display: block;
+    font-size: 20px;
+}
+
+
+/* Give the nav bar logo a hidden overflow, 50% border radius */
+.nav-link-logo {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* Give the nav bar logo image an 80px width */
+.nav-link-logo img {
+
+    width: 80px;
+}
+
+/* If nav bar link is hovered, change it color to the primary color */
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* If the nav bar has the shrink class give it no shadow */
+.nav.shrink {
+    box-shadow: none;
+}
+
+/* If the nav bar has the shrink class give it and its ul child a 350px width, transparent bg and position it in the top right corner */
+.nav.shrink,
+.nav.shrink .ul-nav {
+
+    width: 350px;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+}
+
+/* If the nav bar has the shrink class make its links have no padding from the top and a grey font color*/
+.nav.shrink .nav-link {
+    padding-top: 0;
+    color: var(--news_elements_color);
+}
+
+/* If the nav bar has the shrink class hide the logo-li div, profile-li div, ticket div*/
+.nav.shrink .logo-li {
+    display: none;
+}
+.nav.shrink .profile-li {
+    display: none;
+}
+.nav.shrink .ticket {
+    display: none;
+}
+
+/* If the ticket div is hovered make the font color white and sarken the bg color */
+.ticket:hover {
+    color: white;
+    background-color: #d10000;
+}
+
+/* Give the ticket div a 143px width, primary color bg, 30px border radius, white font color, display its children in a row, aligning its children horiontally according to the space between them and give it a 800 font weight and a 16px vertical padding and a 9px horizontal padding */
+.ticket {
+    width: 143px;
+    background-color: var(--primary);
+    border-radius: 30px;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 800;
+    padding: 16px 9px;
+}
+
+/* Rotating the ticket icon by 45 deg */
+.ticket i {
+    transform: rotate(45deg);
+}
+.news::after
+{
+    content: '';
+    position: absolute;
+    
+    width: 100%;
+    height: 35%;
+    bottom: 0;
+}
+.indicator-rim
+{
+    position: fixed;
+    width: 1px;
+    margin: 0 50%;
+
+}
+.carousel-inner
+{
+    height: 100%;
+}
+.carousel-item
+{
+    width: 100%;
+    height: 100%;
+    /* background-image: attr(--image); */
+    background-image: var(--image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.carousel-item.active
+{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.carousel-item img{
+    height: 100%;
+}
+
+/* If the screen width is 588px or less */
+@media only screen and (max-width: 588px) {
+
+    /* Put the nav bar at the bottom of the page and lgive it a padding of 10px and a border radius of 30px on the bottom border only */
+    .nav {
+        bottom: 0;
+        padding: 10px;
+        border-radius: 30px 30px 0 0;
+    }
+
+    /* Give the links that are in the navbar a width of -webkit-fill-available */
+    .nav-links-div {
+        width: -webkit-fill-available;
+    }
+
+    /* Hide the logo */
+    .logo-li {
+        display: none;
+    }
+
+    /* Make the nav bar when it has the shrink class and it's ul have a bottom of 0 and top initial to make the animation better  */
+    .nav.shrink,
+    .nav.shrink .ul-nav {
+        bottom: 0;
+        top: initial;
+    }
+
+    /* Give the nav bar it's initial height and   */
+    .nav {
+        height: initial;
+    }
+
+    /* Give the nav bar that has the shrink class a height of 0 */
+    .nav.shrink {
+        height: 0;
+    }
+
+    /* Give all the children of the nav bar that has the shrink class a font size of 0 */
+    .nav.shrink * {
+        font-size: 0;
+    }
+
+    /* Set the ticket div that has a nav bar with the shrink class as a parent a display flex and a scale of 0 */
+    .nav.shrink .ticket {
+        display: flex;
+        transform: scale(0);
+    }
+
+    /* Set the ticket div position a value of fixed and positioning it on the top right corner of the screen and give it a margin of 5 px and a width that fits its content and a scale of 1 */
+    .ticket {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 5px;
+        width: fit-content;
+        padding: 15px;
+        transform: scale(1);
+
+    }
+
+    /* Hide the ticket div's children that aren't an i tag */
+    .ticket *:not(i) {
+        display: none;
+    }
+}
+
+/* If the screen width is less than 724px */
+@media only screen and (max-width: 724px) {
+
+    /* Remove the image */
+    .home-card .image {
+        width: 0;
+        margin-right: 0;
+    }
+
+    /* Give the text div that has a home card div as a parent full width */
+    .home-card .text {
+        width: 100%;
+    }
+}
+
+/* If the screen width is less than 600px */
+@media only screen and (max-width: 600px) {
+
+    /* Make the timer's font size 46px */
+    .timer {
+        font-size: 46px;
+    }
+}
+
+/* If the screen width is less than 490px */
+@media only screen and (max-width: 490px) {
+
+    /* Give the home-card div a padding of 20px and a horizontal margin of 40px and a border radius of 49px */
+    .home-card {
+        padding: 20px;
+        margin: 40px 0;
+        border-radius: 49px;
+    }
+
+    /* Give the text div that has a home card div as a parent a smaller font size */
+    .home-card .text {
+        font-size: smaller;
+    }
+}
+
+/* If the screen width is less than 370px */
+@media only screen and (max-width: 370px) {
+
+    /* Give the h1 that has a text div as a parent and a home card div as a grandparent a font size of 17px */
+    .home-card .text h1 {
+        font-size: 17px;
+    }
+
+    /* Give the p that has a text div as a parent and a home card div as a grandparent a font size of 9px */
+    .home-card .text p {
+        font-size: 9px;
+    }
+
+    /* Give the timer a font size of 29px */
+    .timer {
+        font-size: 29px;
+    }
+
+    /* Give the links in the nav bar a font size of 10px */
+    .nav-link {
+        font-size: 10px;
+        padding: 5px 0;
+    }
+
+
+    /* Give the i tags that have a nav-link list item a font size of 12px */
+    .nav-link i {
+        font-size: 12px;
+    }
+    /* Giving the ticket div 8px padding all around to override the nav-link div */
+    .ticket
+    {
+        padding: 8px;
+        
+    }
+    /* Giving the i of the ticket div 16px font size to override the i of nav-link div */
+    .ticket i
+    {
+        font-size: 16px;
+    }
+}
+
+/* Mouse wheel animation */
+@keyframes mouse_wheel {
+    0% {
+        margin-top: 5px;
+    }
+
+    50% {
+        margin-top: 15px;
+    }
+
+    100% {
+        margin-top: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
